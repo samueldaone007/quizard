@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home - SmartQuiz{% endblock %}
+
+{% block content %}
+    <div style="text-align: center; margin-top: 40px;">
+        <h1 style="font-size: 3em; color: #333;">Welcome to <span style="color: #f39c12;">SmartQuiz</span></h1>
+        <p style="font-size: 1.2em; max-width: 600px; margin: 20px auto;">
+            Discover a better way to learn, test, and grow your knowledge! Whether you're brushing up before an exam, exploring a new topic, or creating your own quiz empire — SmartQuiz is here for it.
+        </p>
+        <img src="https://cdn-icons-png.flaticon.com/512/3800/3800012.png" alt="Quiz Illustration" style="max-width: 250px; margin-top: 30px;">
+    </div>
+
+    <style>
+        .quiz-button {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        .quiz-button:hover {
+            transform: scale(1.08) translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-blue { background-color: #2980b9; }
+        .btn-green { background-color: #27ae60; }
+        .btn-purple { background-color: #8e44ad; }
+    </style>
+
+    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap;">
+        <a href="{% url 'study:study' %}" class="quiz-button btn-blue">📚 Study Materials</a>
+        <a href="{% url 'take_quiz' %}" class="quiz-button btn-green">📝 Take a Quiz</a>
+        <a href="{% url 'create_quiz' %}" class="quiz-button btn-purple">🛠️ Create Your Own</a>
+    </div>
+
+    <div style="margin-top: 60px; text-align: center;">
+        <h3 style="color: #888;">“Learning never exhausts the mind, it only fuels curiosity.”</h3>
+        <p style="color: #aaa; font-style: italic;">- A random motivational quote for your daily brain gym 🧠</p>
+    </div>
+{% endblock %}
